@@ -96,7 +96,7 @@ https://github.com/PaulVLAD22/SoftwareEngineering--Uni
   <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>5 6-7</b></li>
   <li>Resetarea codului pin <b>3 4</b></li>
   <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare <b>5 6-7</b></li>
-
+</ul>
  
 ## Plot the issues.  
 <ul>
