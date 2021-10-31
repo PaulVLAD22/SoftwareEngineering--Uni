@@ -5,23 +5,24 @@
 Scopul aplicației este sa facem accesul oamenilor în propriile locuințe mai sigur și mai ușor folosind tehnologii precum "Face Recognition" și "Fingerprint Scanner". Prin crearea unui Smart Lock, "iLock", revolutionam un domeniu care a evoluat minimal în ultima sută de ani.
 
 ## Obiectivele aplicației
-
-Aplicatia noastra are ca obiectiv sa ofere o soluție sigură și ieftina, capabila de securizarea locuinței sau a altor bunuri, reducand astfel riscul unei spargeri avand de asemenea abilitatea de a memora fata unui posibil intrus și de a înștiința autoritățile în acest caz.
+<ul>
+  <li>Autorizarea deschiderii lock-ului prin metode biometrice rapide fingerprint reader, face recognition.</li>
+  <li>Securitate oferita prin setarea unui numar de telefon ce va fi apelat in cazul accesului interzis succesiv.</li>
+  <li>Software user friendly care sa prezinte solutie de back-up in cazul uitarii PINului.</li>
+  <li>Oferirea optiunii de a deschide lock-ul de la distanta.</li>
+  <li>Setarea unui time-frame in care lock-ul poate fi utilizat.</li>
+</ul>
 
 ## Grupul țintă
 
 Aceasta aplicatie este adresată persoanelor care își doresc un mediu cat mai securizat și mai inteligent. Ne dăm seama de acest grup tinta ascultând de User Stories identificate online : 
 <ul>
   <li>“Îmi doresc sa pot intra mai ușor în casa folosind amprenta, în loc sa imi car cheia mereu cu mine”</li>
-
   <li>"Ca Office Manager imi doresc sa dau mai usor acces angajatilor in diferite incaperi pastrand filtrarea persoanelor care au acces prin metode biometrice."</li>
-
   <li>“Ca locatar intr-un cartier foarte populat  in cazul în care un necunoscut încearca sa intre-n casa, as vrea sa am o poza cu fata lui în momentul în care greseste PINul sau pune amprenta neinregistrata”</li>
-
-  <li>“As vrea ca sistemul sa cheme automat autoritățile atunci cand o persoana încearcă obsesiv sa intre, greșind de multe ori PIN-ul”</li>
-  <li>“Mi-ar plăcea sa fiu identificat chiar și prin face recognition, exact ca pe telefonul meu”</li>
-  <li>“Am nevoie de un sistem unde e ușor de schimbat PIN-ul sau amprenta.”</li>
-  <li>“Cred ca ar fi folositor sa pot da accesul cuiva în casa de la distanța, prin telefon”</li>
+  <li>“Ca Security Manager as vrea ca sistemul sa cheme automat autoritățile atunci cand o persoana încearcă obsesiv sa intre, greșind de multe ori PIN-ul”</li>
+  <li>“Ca Teen Tech Enthusiast mi-ar plăcea sa fiu identificat chiar și prin face recognition, exact ca pe telefonul meu”</li>
+  <li>“In cazul unei renovari cred ca ar fi folositor sa pot da accesul cuiva în casa de la distanța, prin telefon”</li>
 </ul>
 
 ### Colectarea cerințelor
