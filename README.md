@@ -1,4 +1,3 @@
-# SoftwareEngineering--Uni
 # iLock - Document de analiză a cerințelor clientului
 
 ## Scopul aplicației
@@ -40,23 +39,22 @@ iLock oferă posibilitatea deblocarii prin:
 
 
 ## Interpretarea și prioritizarea cerințelor  
-Cerinte functionale:
- 
-Deblocare prin fingerprint
-Deblocare prin face recognition 
-Deblocare prin cod pin (primind string)
-Deblocare prin NFC (primind array de bytes)
- 
-Setari pentru interzicerea deblocarii dupa diferiti parametrii
- 
-Generare cod one time use
- 
-Cerinte non-functionale:
- 
-Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului
-Resetarea codului pin
-Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare
- 
+### Cerinte functionale:
+<ul>
+  <li>Deblocare prin fingerprint</li>
+  <li>Deblocare prin face recognition </li>
+  <li>Deblocare prin cod pin (primind string)</li>
+  <li>Setari pentru interzicerea deblocarii dupa diferiti parametriiDeblocare prin NFC (primind array de bytes)</li>
+  <li>Generare cod one time use</li>
+</ul>
+<br/>
+### Cerinte non-functionale:
+<ul>
+  <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului</li>
+  <li>Resetarea codului pin</li>
+  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare</li>
+  <li></li>
+<ul/>
  
  
 2. Gruparea cerințelor 
