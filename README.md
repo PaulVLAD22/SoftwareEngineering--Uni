@@ -39,6 +39,7 @@ iLock oferă posibilitatea deblocarii prin:
 
 
 ## Interpretarea și prioritizarea cerințelor  
+
 ### Cerinte functionale:
 <ul>
   <li>Deblocare prin fingerprint</li>
@@ -48,6 +49,7 @@ iLock oferă posibilitatea deblocarii prin:
   <li>Generare cod one time use</li>
 </ul>
 <br/>
+
 ### Cerinte non-functionale:
 <ul>
   <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului</li>
@@ -79,13 +81,12 @@ iLock oferă posibilitatea deblocarii prin:
   <li>Setari pentru interzicerea deblocarii dupa diferiti parametrii</li>
 </ul>
 
-### Github Link 
-<br/>
+## Github Link 
 https://github.com/PaulVLAD22/SoftwareEngineering--Uni 
-### Play planning poker.
+
+## Play planning poker.
 
 <ul>
-
   <li>Deblocare prin fingerprint <b>7  3-4</b></li>
   <li>Deblocare prin face recognition <b>7 6-7</b></li>
   <li>Deblocare prin cod pin (primind string) <b>2 1</b></li>
@@ -95,30 +96,17 @@ https://github.com/PaulVLAD22/SoftwareEngineering--Uni
   <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>5 6-7</b></li>
   <li>Resetarea codului pin <b>3 4</b></li>
   <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare <b>5 6-7</b></li>
+
+ 
+## Plot the issues.  
+<ul>
+  <li> Deblocare prin fingerprint <b>dificil-valoros</b> </li>
+  <li> Deblocare prin face recognition	<b>dificil-nevaloros</b></li>
+  <li> Deblocare prin cod pin (primind string)  <b>usor-valoros</b></li>
+  <li> Deblocare prin NFC (primind array de bytes) 	<b>dificil-nevaloros</b></li>
+  <li> Setari pentru interzicerea deblocarii dupa diferiti parametrii	 <b>usor-nevaloros</b></li>
+  <li> Generare cod one time use 3 4	usor-valoros<b></b></li>
+  <li> Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului 5 6-7  <b>dificil-nevaloros</b></li>
+  <li> Resetarea codului pin 3 4		<b>usor-valoros</b></li>
+  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare <b>dificil-nevaloros </b></li>
 </ul>
- 
-5. Plot the issues.  
- Deblocare prin fingerprint 	dificil-valoros
-Deblocare prin face recognition	 dificil-nevaloros
-Deblocare prin cod pin (primind string) 	usor-valoros
-Deblocare prin NFC (primind array de bytes) 	dificil-nevaloros
-Setari pentru interzicerea deblocarii dupa diferiti parametrii	 usor-nevaloros
-Generare cod one time use 3 4	usor-valoros
-Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului 5 6-7  dificil-nevaloros
-Resetarea codului pin 3 4		usor-valoros
-Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare dificil-nevaloros
- 
- 
-6. Check the features.  - Good
- 
-7. Add technical issues. - Done
- 
- 
-Alocarea rolurilor 
- Vlad Munteanu - Deblocare cod pin
-Cristian Grecu - dev setup, email api, unit/integration testing
- 
- 
-Documentul de analiză va fi adăugat în GitHub-ul proiectului.  
-
-
