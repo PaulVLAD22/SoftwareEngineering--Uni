@@ -53,48 +53,49 @@ iLock oferă posibilitatea deblocarii prin:
   <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului</li>
   <li>Resetarea codului pin</li>
   <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare</li>
-  <li></li>
-<ul/>
+</ul>
  
  
-2. Gruparea cerințelor 
-Identificați criterii de gruparea cerințelor care ulterior credeți că vă vor ajuta la dezvoltare.  
- - Folosiți criterii pentru a grupa cerințele într-un mod care vi se pare util – după zona de tehnologie (BE, DevOps ș.a.) după eventualele module ale app (comunicare, procesare, stocarea datelor ș.a.), după feature-uri. Menționați aceste categorii și în documentul de analiză. 
+## Gruparea cerințelor 
+
+### Unlocking Methods:
+<ul>
+  <li>Deblocare prin fingerprint</li>
+  <li>Deblocare prin face recognition</li>
+  <li>Deblocare prin cod pin</li>
+  <li>Deblocare prin NFC</li>
+  <li>Generare cod one time use</li>
+</ul>
+
+### Security:
+<ul>
+  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare</li>
+</ul>
  
-Unlocking Methods:
- 
-Deblocare prin fingerprint
-Deblocare prin face recognition
-Deblocare prin cod pin
-Deblocare prin NFC
-Generare cod one time use
- 
-Security:
- 
-Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare
- 
-User Experience:
- 
-Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului
-Resetarea codului pin
-Setari pentru interzicerea deblocarii dupa diferiti parametrii
- 
-3. Github: https://github.com/PaulVLAD22/SoftwareEngineering--Uni
-Resources: 
-The Product Backlog: A Step-by-step Guide În general sunt bune articolele de la toptal pe software engineering.  
- 
-4. Play planning poker.
- 
- Deblocare prin fingerprint 7  3-4
-Deblocare prin face recognition 7 6-7
-Deblocare prin cod pin (primind string) 2 1
-Deblocare prin NFC (primind array de bytes) 6 6
-Setari pentru interzicerea deblocarii dupa diferiti parametrii 4 6
-Generare cod one time use 3 4
-Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului 5 6-7
-Resetarea codului pin 3 4
-Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare 5 6-7
- 
+### User Experience:
+<ul>
+  <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului</li>
+  <li>Resetarea codului pin</li>
+  <li>Setari pentru interzicerea deblocarii dupa diferiti parametrii</li>
+</ul>
+
+### Github Link 
+<br/>
+https://github.com/PaulVLAD22/SoftwareEngineering--Uni 
+### Play planning poker.
+
+<ul>
+
+  <li>Deblocare prin fingerprint <b>7  3-4</b></li>
+  <li>Deblocare prin face recognition <b>7 6-7</b></li>
+  <li>Deblocare prin cod pin (primind string) <b>2 1</b></li>
+  <li>Deblocare prin NFC (primind array de bytes) <b>6 6</b></li>
+  <li>Setari pentru interzicerea deblocarii dupa diferiti parametrii <b>4 6</b></li>
+  <li>Generare cod one time use <b>3 4</b></li>
+  <li>Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>5 6-7</b></li>
+  <li>Resetarea codului pin <b>3 4</b></li>
+  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare <b>5 6-7</b></li>
+</ul>
  
 5. Plot the issues.  
  Deblocare prin fingerprint 	dificil-valoros
