@@ -1,17 +1,15 @@
 # SoftwareEngineering--Uni
-# iLock
+# iLock - Document de analiză a cerințelor clientului
 
-## Document de analiză a cerințelor clientului
-
-### Scopul aplicației
+## Scopul aplicației
 
 Scopul aplicației este sa facem accesul oamenilor în propriile locuințe mai sigur și mai ușor folosind tehnologii precum "Face Recognition" și "Fingerprint Scanner". Prin crearea unui Smart Lock, "iLock", revolutionam un domeniu care a evoluat minimal în ultima sută de ani.
 
-### Obiectivele aplicației
+## Obiectivele aplicației
 
 Aplicatia noastra are ca obiectiv sa ofere o soluție sigură și ieftina, capabila de securizarea locuinței sau a altor bunuri, reducand astfel riscul unei spargeri avand de asemenea abilitatea de a memora fata unui posibil intrus și de a înștiința autoritățile în acest caz.
 
-### Grupul țintă
+## Grupul țintă
 
 Aceasta aplicatie este adresată persoanelor care își doresc un mediu cat mai securizat și mai inteligent. Ne dăm seama de acest grup tinta ascultând de User Stories identificate online : 
 <ul>
@@ -41,7 +39,7 @@ iLock oferă posibilitatea deblocarii prin:
 
 
 
-### Interpretarea și prioritizarea cerințelor  
+## Interpretarea și prioritizarea cerințelor  
 Cerinte functionale:
  
 Deblocare prin fingerprint
