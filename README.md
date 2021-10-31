@@ -106,8 +106,8 @@ https://github.com/PaulVLAD22/SoftwareEngineering--Uni
   <li> Deblocare prin cod pin (primind string)  <b>usor-valoros</b></li>
   <li> Deblocare prin NFC (primind array de bytes) 	<b>dificil-nevaloros</b></li>
   <li> Setari pentru interzicerea deblocarii dupa diferiti parametrii	 <b>usor-nevaloros</b></li>
-  <li> Generare cod one time use 3 4	usor-valoros<b></b></li>
-  <li> Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului 5 6-7  <b>dificil-nevaloros</b></li>
-  <li> Resetarea codului pin 3 4		<b>usor-valoros</b></li>
+  <li> Generare cod one time use <b>usor-valoros</b></li>
+  <li> Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>dificil-nevaloros</b></li>
+  <li> Resetarea codului pin <b>usor-valoros</b></li>
   <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare <b>dificil-nevaloros </b></li>
 </ul>
