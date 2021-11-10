@@ -20,7 +20,7 @@ public class PINController {
     }
 
     //localhost:8080/pin/validate?deviceId=1&pin=1234 exemplu request
-    
+
     @PostMapping("/pin/validate")
     public boolean validatePin(@RequestParam long deviceId,
                           @RequestParam String pin){
