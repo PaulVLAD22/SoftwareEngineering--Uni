@@ -1,10 +1,8 @@
 package com.university.ilock.entity;
 
 import lombok.*;
-import org.hibernate.Hibernate;
-
 import javax.persistence.*;
-import java.util.Objects;
+
 
 @Data
 @Entity
@@ -19,5 +17,4 @@ public class Device {
     //fingerprint
     //faceId
     // alte metode de control (ore de acces)
-
 }
