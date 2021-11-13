@@ -15,7 +15,6 @@ public class PINController {
 
     @PutMapping("/pin/update")
     public void updatePin(@RequestParam long deviceId,
-                          @RequestParam String pin) {
        pinService.updatePINForDevice(deviceId,pin);
     }
 
