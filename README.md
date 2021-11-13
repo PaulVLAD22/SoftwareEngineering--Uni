@@ -101,13 +101,13 @@ https://github.com/PaulVLAD22/SoftwareEngineering--Uni
  
 ## Plot the issues.  
 <ul>
-  <li> Deblocare prin fingerprint <b>dificil-valoros</b> </li>
-  <li> Deblocare prin face recognition	<b>dificil-nevaloros</b></li>
-  <li> Deblocare prin cod pin (primind string)  <b>usor-valoros</b></li>
-  <li> Deblocare prin NFC (primind array de bytes) 	<b>dificil-nevaloros</b></li>
-  <li> Setari pentru interzicerea deblocarii dupa diferiti parametrii	 <b>usor-nevaloros</b></li>
-  <li> Generare cod one time use <b>usor-valoros</b></li>
-  <li> Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>dificil-nevaloros</b></li>
-  <li> Resetarea codului pin <b>usor-valoros</b></li>
-  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare <b>dificil-nevaloros </b></li>
+  <li> Deblocare prin fingerprint <b>dificil-valoros</b> Dobrica Denis Stefan</li> 
+  <li> Deblocare prin face recognition	<b>dificil-nevaloros</b> Grecu Cristian</li> 
+  <li> Deblocare prin cod pin (primind string) <b>usor-valoros</b> Munteanu Vlad Paul</li>
+  <li> Deblocare prin NFC (primind array de bytes) 	<b>dificil-nevaloros</b> Marculescu Andrei Cristian</li>
+  <li> Setari pentru interzicerea deblocarii dupa diferiti parametrii <b>usor-nevaloros</b></li>
+  <li> Generare cod one time use <b>usor-valoros</b> Munteanu Vlad Paul</li>
+  <li> Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>dificil-nevaloros</b> Grecu Bogdan</li>
+  <li> Resetarea codului pin <b>usor-valoros</b> Munteanu Vlad Paul</li>
+  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare + cooldown dupa 3 fails<b>dificil-nevaloros </b></li>
 </ul>
