@@ -109,5 +109,5 @@ https://github.com/PaulVLAD22/SoftwareEngineering--Uni
   <li> Generare cod one time use <b>usor-valoros</b> Munteanu Vlad Paul</li>
   <li> Trimiterea de email-uri prin API extern pentru a comunica informatii detinatorului <b>dificil-nevaloros</b> Grecu Bogdan</li>
   <li> Resetarea codului pin <b>usor-valoros</b> Munteanu Vlad Paul</li>
-  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare + cooldown dupa 3 fails<b>dificil-nevaloros </b></li>
+  <li>Stocarea informatiilor legate de contextul in care s-au facut multiple incercari gresite de deblocare + cooldown dupa 3 fails <b>dificil-nevaloros </b> Munteanu Vlad Paul</li>
 </ul>
