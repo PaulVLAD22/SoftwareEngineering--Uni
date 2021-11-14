@@ -14,7 +14,6 @@ public class Device {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String pin;
-    private String oneTimeToken;
     private Byte [] NfcSignal;
     //fingerprint
     //faceId
