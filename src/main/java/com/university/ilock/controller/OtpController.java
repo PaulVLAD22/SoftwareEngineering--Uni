@@ -20,7 +20,7 @@ public class OtpController {
         return otp;
     }
 
-    @RequestMapping(value = "/validateOtp", method = RequestMethod.GET)
+    @GetMapping(value="/valideOtp")
     public String validateOtp(@RequestParam long deviceId,
                               @RequestParam int otpnum) {
 
