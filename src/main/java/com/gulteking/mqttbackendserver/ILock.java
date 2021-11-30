@@ -1,13 +1,13 @@
-package com.university.ilock;
+package com.gulteking.mqttbackendserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IlockApplication {
+public class ILock {
 
     public static void main(String[] args) {
-        SpringApplication.run(IlockApplication.class, args);
+        SpringApplication.run(ILock.class, args);
     }
 
 }
