@@ -1,4 +1,4 @@
-package com.gulteking.mqttbackendserver.model;
+package com.university.ilock.model;
 
 public class MqttSubscribeModel {
 

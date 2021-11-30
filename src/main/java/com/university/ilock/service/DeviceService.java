@@ -1,7 +1,8 @@
-package com.gulteking.mqttbackendserver.service;
+package com.university.ilock.service;
 
-import com.gulteking.mqttbackendserver.Repository.*;
-import com.gulteking.mqttbackendserver.model.*;
+
+import com.university.ilock.Repository.*;
+import com.university.ilock.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.gulteking.mqttbackendserver.config;
+package com.university.ilock.config;
 
 import org.springframework.context.annotation.*;
 import springfox.documentation.builders.*;

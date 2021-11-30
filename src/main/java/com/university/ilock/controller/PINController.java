@@ -1,7 +1,8 @@
-package com.gulteking.mqttbackendserver.controller;
+package com.university.ilock.controller;
 
-import com.gulteking.mqttbackendserver.config.*;
-import com.gulteking.mqttbackendserver.service.*;
+
+import com.university.ilock.config.*;
+import com.university.ilock.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.*;

@@ -1,11 +1,11 @@
-package com.gulteking.mqttbackendserver.controller;
+package com.university.ilock.controller;
 
-import com.gulteking.mqttbackendserver.config.Mqtt;
-import com.gulteking.mqttbackendserver.exceptions.ExceptionMessages;
-import com.gulteking.mqttbackendserver.exceptions.MqttException;
-import com.gulteking.mqttbackendserver.model.MqttPublishModel;
-import com.gulteking.mqttbackendserver.model.MqttSubscribeModel;
-import com.gulteking.mqttbackendserver.service.*;
+import com.university.ilock.config.Mqtt;
+import com.university.ilock.exceptions.ExceptionMessages;
+import com.university.ilock.exceptions.MqttException;
+import com.university.ilock.model.MqttPublishModel;
+import com.university.ilock.model.MqttSubscribeModel;
+import com.university.ilock.service.*;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.validation.BindingResult;

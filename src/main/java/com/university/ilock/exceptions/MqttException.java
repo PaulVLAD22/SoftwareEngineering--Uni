@@ -1,4 +1,4 @@
-package com.gulteking.mqttbackendserver.exceptions;
+package com.university.ilock.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package com.gulteking.mqttbackendserver.config;
+package com.university.ilock.config;
 
 import org.eclipse.paho.client.mqttv3.IMqttClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
