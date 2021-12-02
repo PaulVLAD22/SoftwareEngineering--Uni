@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class PINController {
 
-    private final DeviceService pinService;
+    private final PINService pinService;
 
     @PutMapping("/pin/update")
     public void updatePin(@RequestParam long deviceId,

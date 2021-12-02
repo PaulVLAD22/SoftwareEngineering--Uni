@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class DeviceService {
+public class PINService {
     private final DeviceRepository deviceRepository;
 
     public void updatePINForDevice(long deviceId, String pin){

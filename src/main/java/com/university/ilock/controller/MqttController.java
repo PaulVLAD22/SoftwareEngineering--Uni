@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping(value = "/api/mqtt")
 public class MqttController {
     @Autowired
-    private DeviceService deviceService;
+    private PINService deviceService;
 
 
     @PostMapping("publish")
