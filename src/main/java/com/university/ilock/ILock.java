@@ -12,6 +12,8 @@ import org.springframework.context.annotation.*;
 public class ILock {
     @Autowired
     public PINService pinService;
+    @Autowired
+    public OtcService otcService;
 
     public static void main(String[] args) {
         SpringApplication.run(ILock.class, args);
@@ -25,6 +27,11 @@ public class ILock {
         // Rularea functiilor
         pinService.updatePINForDevice(deviceId,newPIN);
         log.info(String.valueOf(pinService.validatePin(1,newPIN)));
+    }
+    @Bean
+    public void testOneTimeCode(){
+        int otc = otcService.generateOTC(1);
+        log.info(String.valueOf(otc==otcService.getOTC(1)));
     }
 
 }
