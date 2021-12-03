@@ -8,6 +8,7 @@ import com.university.ilock.model.MqttSubscribeModel;
 import com.university.ilock.service.*;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.annotation.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,24 +44,28 @@ public class MqttController {
         Mqtt.getInstance().publish(messagePublishModel.getTopic(), mqttMessage);
     }
 
-    @GetMapping("subscribe")
-    public List<MqttSubscribeModel> subscribeChannel(@RequestParam(value = "topic") String topic,
-                                                     @RequestParam(value = "wait_millis") Integer waitMillis)
-            throws InterruptedException, org.eclipse.paho.client.mqttv3.MqttException {
+//    @GetMapping("subscribe")
+//    public List<MqttSubscribeModel> subscribeChannel(@RequestParam(value = "topic") String topic,
+//                                                     @RequestParam(value = "wait_millis") Integer waitMillis)
+//            throws InterruptedException, org.eclipse.paho.client.mqttv3.MqttException {
+    @Bean
+    public void listenToTopic() throws org.eclipse.paho.client.mqttv3.MqttException {
+        String outputTopic ="responseTopic";
+        String inputTopic = "mytopic";
         List<MqttSubscribeModel> messages = new ArrayList<>();
-        CountDownLatch countDownLatch = new CountDownLatch(10);
-        Mqtt.getInstance().subscribeWithResponse(topic, (s, mqttMessage) -> {
-            MqttSubscribeModel mqttSubscribeModel = new MqttSubscribeModel();
-            mqttSubscribeModel.setId(mqttMessage.getId());
-            mqttSubscribeModel.setMessage(new String(mqttMessage.getPayload()));
-            mqttSubscribeModel.setQos(mqttMessage.getQos());
-            messages.add(mqttSubscribeModel);
-            countDownLatch.countDown();
+
+
+        Mqtt.getInstance().subscribeWithResponse(inputTopic, (s, mqttMessage) -> {
+            String message = new String(mqttMessage.getPayload());
+
+            System.out.println(message);
+
+            MqttMessage mqttMessage2 = new MqttMessage(message.getBytes());
+            mqttMessage.setQos(0);
+            mqttMessage.setRetained(true);
+
+            Mqtt.getInstance().publish(outputTopic, mqttMessage2);
         });
-
-        countDownLatch.await(waitMillis, TimeUnit.MILLISECONDS);
-
-        return messages;
     }
 
 
