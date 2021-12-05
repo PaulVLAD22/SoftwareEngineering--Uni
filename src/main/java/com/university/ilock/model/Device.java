@@ -12,6 +12,7 @@ public class Device {
     private long id;
     private String pin;
     private Byte [] NfcSignal;
+    private boolean IsFaceUnlockEnabled;
     //fingerprint
     //faceId
     // alte metode de control (ore de acces)
