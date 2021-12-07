@@ -17,14 +17,5 @@ public class ILock {
         SpringApplication.run(ILock.class, args);
     }
 
-    @Bean
-    public void testPIN () {
-        // Inputul
-        long deviceId = 1;
-        String newPIN = "141414";
-        // Rularea functiilor
-        pinService.updatePINForDevice(deviceId,newPIN);
-        log.info(String.valueOf(pinService.validatePin(1,newPIN)));
-    }
 
 }
