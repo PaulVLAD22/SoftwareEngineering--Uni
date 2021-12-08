@@ -6,6 +6,7 @@ import com.university.ilock.exceptions.MqttException;
 import com.university.ilock.model.MqttPublishModel;
 import com.university.ilock.model.MqttSubscribeModel;
 import com.university.ilock.service.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.validation.BindingResult;
@@ -17,14 +18,16 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+
 @RestController
+@Tag(name = "MQTT Controller", description = "Set of endpoints for Creating, Retrieving, Updating and Deleting Entity.")
 @RequestMapping(value = "/api/mqtt")
 public class MqttController {
     @Autowired
     private PINService deviceService;
 
 
-    @PostMapping("publish")
+    @PostMapping("/publish")
     public void publishMessage(@RequestBody @Valid MqttPublishModel messagePublishModel,
                                BindingResult bindingResult) throws org.eclipse.paho.client.mqttv3.MqttException {
         if (bindingResult.hasErrors()) {
@@ -43,7 +46,7 @@ public class MqttController {
         Mqtt.getInstance().publish(messagePublishModel.getTopic(), mqttMessage);
     }
 
-    @GetMapping("subscribe")
+    @GetMapping("/subscribe")
     public List<MqttSubscribeModel> subscribeChannel(@RequestParam(value = "topic") String topic,
                                                      @RequestParam(value = "wait_millis") Integer waitMillis)
             throws InterruptedException, org.eclipse.paho.client.mqttv3.MqttException {
