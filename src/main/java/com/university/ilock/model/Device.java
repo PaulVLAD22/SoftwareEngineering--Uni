@@ -4,6 +4,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "device")
 public class Device {
