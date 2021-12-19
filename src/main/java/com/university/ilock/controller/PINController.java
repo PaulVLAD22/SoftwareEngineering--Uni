@@ -22,30 +22,14 @@ public class PINController {
     public void updatePin(@RequestParam long deviceId,
                           @RequestParam String pin) throws MqttException {
         pinService.updatePINForDevice(deviceId,pin);
-
-        String response = "Raspunsul meu";
-        String topic = "mytopic";
-
-        MqttMessage mqttMessage = new MqttMessage(response.getBytes());
-        mqttMessage.setQos(0);
-        mqttMessage.setRetained(true);
-
-        Mqtt.getInstance().publish(topic, mqttMessage);
     }
 
     @GetMapping("/validate")
-    public void validatePin(@RequestParam long deviceId,
+    public boolean validatePin(@RequestParam long deviceId,
                                @RequestParam String pin) throws MqttException {
         boolean valid = pinService.validatePin(deviceId,pin);
 
-        String response =  String.valueOf(valid);
-        String topic = "mytopic";
-
-        MqttMessage mqttMessage = new MqttMessage(response.getBytes());
-        mqttMessage.setQos(0);
-        mqttMessage.setRetained(true);
-
-        Mqtt.getInstance().publish(topic, mqttMessage);
+        return valid;
 
     }
 
