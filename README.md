@@ -46,7 +46,8 @@ iLock oferă posibilitatea deblocarii prin:
   <li>Deblocare prin fingerprint</li>
   <li>Deblocare prin face recognition </li>
   <li>Deblocare prin cod pin (primind string)</li>
-  <li>Setari pentru interzicerea deblocarii dupa diferiti parametriiDeblocare prin NFC (primind array de bytes)</li>
+  <li>Setari pentru interzicerea deblocarii dupa diferiti parametrii</li>
+  <li>Deblocare prin NFC (primind array de bytes)</li>
   <li>Generare cod one time use</li>
 </ul>
 <br/>
