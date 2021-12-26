@@ -1,10 +1,10 @@
 package com.university.ilock.controller;
 
+import com.university.ilock.Repository.*;
 import com.university.ilock.config.Mqtt;
 import com.university.ilock.exceptions.ExceptionMessages;
 import com.university.ilock.exceptions.MqttException;
-import com.university.ilock.model.MqttPublishModel;
-import com.university.ilock.model.MqttSubscribeModel;
+import com.university.ilock.model.*;
 import com.university.ilock.service.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
@@ -25,20 +25,21 @@ import java.util.concurrent.TimeUnit;
 @Tag(name = "MQTT Controller", description = "Set of endpoints for Creating, Retrieving, Updating and Deleting Entity.")
 @RequestMapping(value = "/api/mqtt")
 public class MqttController {
+    @Autowired
+    private AuditRepository auditRepository;
 
-    @Bean
-    @Scheduled(fixedDelay = 5000)
+    @Scheduled(fixedRate = 5000)
     public void publishStatus() throws org.eclipse.paho.client.mqttv3.MqttException {
-        String status = " ";
-        String topic = "mqttTopic";
+        List<Audit> auditList = auditRepository.getLastFive();
+
+        String status = auditList.stream().map(Audit::toString).reduce("",(audit1,audit2)-> audit1+"\n"+audit2);
+        String topic = "mytopic";
         MqttMessage mqttMessage = new MqttMessage(status.getBytes());
         mqttMessage.setQos(0);
         mqttMessage.setRetained(true);
 
         Mqtt.getInstance().publish(topic, mqttMessage);
-
     }
-
 
     @PostMapping("/publish")
     public void publishMessage(@RequestBody @Valid MqttPublishModel messagePublishModel,
