@@ -1,6 +1,8 @@
 package com.university.ilock.model;
 
 import lombok.*;
+import org.springframework.lang.*;
+
 import javax.persistence.*;
 
 @Data
@@ -15,7 +17,7 @@ public class Device {
     private long id;
     private String pin;
     private Byte [] NfcSignal;
-    private boolean IsFaceUnlockEnabled;
+    private Boolean IsFaceUnlockEnabled;
     //fingerprint
     //faceId
     // alte metode de control (ore de acces)
