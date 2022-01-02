@@ -19,6 +19,7 @@ import org.springframework.http.*;
 import org.springframework.test.context.*;
 import org.springframework.test.context.junit4.*;
 import org.springframework.test.web.servlet.*;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.client.*;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
@@ -26,6 +27,7 @@ import java.sql.*;
 
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -51,9 +53,24 @@ public class InMemoryTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void valid_pin() throws Exception {
         String body = mvc.perform(get("http://localhost:8080/api/pin/validate?deviceId=1&pin=141414")).andDo(print()).andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
         assert(body.equals("true"));
+    }
+    @Test
+    public void invalid_pin() throws Exception {
+        String body = mvc.perform(get("http://localhost:8080/api/pin/validate?deviceId=1&pin=12345")).andDo(print()).andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString();
+        assert(body.equals("false"));
+    }
+    @Test
+    public void change_pin_and_validate() throws Exception{
+        mvc.perform(put("htttp://localhost:8080/api/pin/update?deviceId=1&pin=12345"))
+                .andDo(mvcResult ->
+                        mvc.perform
+                                (get("http://localhost:8080/api/pin/validate?deviceId=1&pin=12345"))
+                                .andExpect(MockMvcResultMatchers.content().string("true")));
+        //assert(body.equals("true"));
     }
 }
