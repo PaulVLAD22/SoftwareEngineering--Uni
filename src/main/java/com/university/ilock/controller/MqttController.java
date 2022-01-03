@@ -27,12 +27,16 @@ import java.util.concurrent.TimeUnit;
 public class MqttController {
     @Autowired
     private AuditRepository auditRepository;
+    @Autowired
+    private DeviceRepository deviceRepository;
 
     @Scheduled(fixedRate = 5000)
     public void publishStatus() throws org.eclipse.paho.client.mqttv3.MqttException {
-        List<Audit> auditList = auditRepository.getLastFive();
+        String status = String.valueOf(deviceRepository.getById(deviceId).getIsLocked());
+//        List<Audit> auditList = auditRepository.getLastFive();
+//
+//        String status = auditList.stream().map(Audit::toString).reduce("",(audit1,audit2)-> audit1+"\n"+audit2);
 
-        String status = auditList.stream().map(Audit::toString).reduce("",(audit1,audit2)-> audit1+"\n"+audit2);
         String topic = "mytopic";
         MqttMessage mqttMessage = new MqttMessage(status.getBytes());
         mqttMessage.setQos(0);

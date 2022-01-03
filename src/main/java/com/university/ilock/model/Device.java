@@ -16,6 +16,7 @@ public class Device {
     private String pin;
     private Byte [] NfcSignal;
     private boolean IsFaceUnlockEnabled;
+    private Boolean isLocked = true;
     //fingerprint
     //faceId
     // alte metode de control (ore de acces)
