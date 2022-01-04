@@ -26,7 +26,7 @@ public class NfcService {
     private final CodeVerifier verifier = new DefaultCodeVerifier(codeGenerator, timeProvider);
 
     public boolean ValidateNfc(NfcDto nfcDto){
-        //
+        ///
         Device device = deviceRepository.getById(nfcDto.getPayload().getId());
         String secret = device.getTotpSecret();
         boolean response = verifier.isValidCode(secret, nfcDto.getPayload().getCode());
