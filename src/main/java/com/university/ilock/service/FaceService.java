@@ -121,6 +121,9 @@ public class FaceService {
         final List<FaceDetectResponseDto> responses = new ObjectMapper().readValue(res2, new TypeReference<List<FaceDetectResponseDto>>(){});
         for(FaceDetectResponseDto faceDetectResponseDto : responses){
             if(faceDetectResponseDto.getConfidence() > minConfidence){
+                Device device = deviceRepository.getById(faceUnlockDto.getId());
+                device.setIsLocked(false);
+                deviceRepository.save(device);
                 return true;
             }
         }

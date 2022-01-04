@@ -32,17 +32,22 @@ public class MqttController {
 
     @Scheduled(fixedRate = 5000)
     public void publishStatus() throws org.eclipse.paho.client.mqttv3.MqttException {
-        String status = String.valueOf(deviceRepository.getById(deviceId).getIsLocked());
-//        List<Audit> auditList = auditRepository.getLastFive();
-//
-//        String status = auditList.stream().map(Audit::toString).reduce("",(audit1,audit2)-> audit1+"\n"+audit2);
+        List<Device> devices = deviceRepository.findAll();
+        devices.forEach(device->{
+            String status = device.getIsLocked() ? "Locked" : "UnLocked";
 
-        String topic = "mytopic";
-        MqttMessage mqttMessage = new MqttMessage(status.getBytes());
-        mqttMessage.setQos(0);
-        mqttMessage.setRetained(true);
+            String topic = "mytopic"+device.getId();
+            MqttMessage mqttMessage = new MqttMessage(status.getBytes());
+            mqttMessage.setQos(0);
+            mqttMessage.setRetained(true);
 
-        Mqtt.getInstance().publish(topic, mqttMessage);
+            try {
+                Mqtt.getInstance().publish(topic, mqttMessage);
+            } catch (org.eclipse.paho.client.mqttv3.MqttException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     @PostMapping("/publish")
