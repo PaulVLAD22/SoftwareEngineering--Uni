@@ -1,14 +1,16 @@
 package com.university.ilock.controller;
 
+import com.university.ilock.Repository.*;
 import com.university.ilock.config.Mqtt;
 import com.university.ilock.exceptions.ExceptionMessages;
 import com.university.ilock.exceptions.MqttException;
-import com.university.ilock.model.MqttPublishModel;
-import com.university.ilock.model.MqttSubscribeModel;
+import com.university.ilock.model.*;
 import com.university.ilock.service.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.annotation.*;
+import org.springframework.scheduling.annotation.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +26,29 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping(value = "/api/mqtt")
 public class MqttController {
     @Autowired
-    private PINService deviceService;
+    private AuditRepository auditRepository;
+    @Autowired
+    private DeviceRepository deviceRepository;
 
+    @Scheduled(fixedRate = 5000)
+    public void publishStatus() throws org.eclipse.paho.client.mqttv3.MqttException {
+        List<Device> devices = deviceRepository.findAll();
+        devices.forEach(device->{
+            String status = device.getIsLocked() ? "Locked" : "UnLocked";
+
+            String topic = "mytopic"+device.getId();
+            MqttMessage mqttMessage = new MqttMessage(status.getBytes());
+            mqttMessage.setQos(0);
+            mqttMessage.setRetained(true);
+
+            try {
+                Mqtt.getInstance().publish(topic, mqttMessage);
+            } catch (org.eclipse.paho.client.mqttv3.MqttException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
 
     @PostMapping("/publish")
     public void publishMessage(@RequestBody @Valid MqttPublishModel messagePublishModel,

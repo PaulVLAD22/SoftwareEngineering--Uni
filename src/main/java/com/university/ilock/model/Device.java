@@ -31,6 +31,7 @@ public class Device {
     private List<Fingerprint> fingerprints;
 
 //    private Byte [] NfcSignal;
+    private Boolean isLocked = true;
     //fingerprint
     //faceId
     // alte metode de control (ore de acces)

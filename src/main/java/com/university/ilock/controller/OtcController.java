@@ -1,6 +1,8 @@
 package com.university.ilock.controller;
 
+import com.university.ilock.Repository.DeviceRepository;
 import com.university.ilock.config.Mqtt;
+import com.university.ilock.model.Device;
 import com.university.ilock.service.OtcService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -16,11 +18,18 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class OtcController {
     private final OtcService otcService;
+    private final DeviceRepository deviceRepository;
 
     @GetMapping("/validate")
     public boolean validatePin(@RequestParam long deviceId,
                             @RequestParam int otc) {
-        return otc == otcService.getOTC(deviceId);
+        if (otc==otcService.getOTC(deviceId)){
+            Device device = deviceRepository.getById(deviceId);
+            device.setIsLocked(false);
+            deviceRepository.save(device);
+            return true;
+        }
+        return false;
     }
     @GetMapping("/generate")
     public int generateOtc(@RequestParam long deviceId){
