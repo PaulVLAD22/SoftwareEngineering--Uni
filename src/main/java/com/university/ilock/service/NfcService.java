@@ -30,6 +30,10 @@ public class NfcService {
         Device device = deviceRepository.getById(nfcDto.getPayload().getId());
         String secret = device.getTotpSecret();
         boolean response = verifier.isValidCode(secret, nfcDto.getPayload().getCode());
+        if(response){
+            device.setIsLocked(false);
+            deviceRepository.save(device);
+        }
         return response;
     }
 }

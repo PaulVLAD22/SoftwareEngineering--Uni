@@ -68,7 +68,10 @@ public class FingerprintService {
             }
             return false;
         }));
-
+        if(res){
+            device.setIsLocked(false);
+            deviceRepository.save(device);
+        }
         return res;
     }
 
