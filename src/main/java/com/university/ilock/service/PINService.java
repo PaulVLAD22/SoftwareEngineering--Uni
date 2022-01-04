@@ -14,6 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class PINService {
     private final DeviceRepository deviceRepository;
+    private final DeviceService deviceService;
 
     public void updatePINForDevice(long deviceId, String pin){
         Device device = deviceRepository.getById(deviceId);
@@ -21,11 +22,20 @@ public class PINService {
         deviceRepository.save(device);
     }
     public boolean validatePin(long deviceId, String pin){
-        return pin.equals(deviceRepository.getById(deviceId).getPin());
+        if(!deviceService.CheckInputAvailability(deviceId)){
+            System.out.println("Not available");
+            return false;
+        }
+        boolean result = pin.equals(deviceRepository.getById(deviceId).getPin());
+        if(!result){
+            deviceService.RegisterWrongInput(deviceId);
+        }
+        return result;
     }
 
     public boolean validateDeviceId(long deviceId){
         Optional<Device> optionalDevice = deviceRepository.findById(deviceId);
         return optionalDevice.isPresent();
+
     }
 }

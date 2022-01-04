@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.university.ilock.model.EmailModel;
+import com.university.ilock.model.MailUserModel;
+import com.university.ilock.utils.Constants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 
@@ -30,6 +34,23 @@ public class EmailService {
     public EmailService(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder.build();
     }
+
+    public void SendEmailToDevice(String email) throws JsonProcessingException {
+        EmailModel emailModel = new EmailModel();
+        MailUserModel sender = new MailUserModel();
+        sender.setEmail("security@ilock.com");
+        sender.setName("ILock");
+        emailModel.setSender(sender);
+        MailUserModel recipient = new MailUserModel();
+        recipient.setEmail(email);
+        recipient.setName("iLock Device");
+        emailModel.setRecipients(new ArrayList<MailUserModel>(Arrays.asList(recipient)));
+        emailModel.setSubject("iLock Security alert");
+        emailModel.setContent(Constants.CallThePoliceMail);
+
+        SendEmail(emailModel);
+    }
+
     public void SendEmail(EmailModel email) throws JsonProcessingException {
         String url = "https://api.sendinblue.com/v3/smtp/email";
 
@@ -58,7 +79,6 @@ public class EmailService {
         ResponseEntity<String> response = this.restTemplate.postForEntity(url, entity, String.class);
 
         System.out.println(response);
-
-
     }
+
 }

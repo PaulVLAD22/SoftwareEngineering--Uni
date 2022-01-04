@@ -26,7 +26,7 @@ import java.util.List;
 public class FaceService {
 
     private static final double minConfidence = Constants.MinimumConfidenceLevel;
-    private static final String faceListUrl = Secrets.faceListUrl;
+    private static final String faceListUrl = Secrets.faceListBaseUrl;
     private static final String baseUrl = Secrets.faceBaseUrl;
     private static final String apiKey = Secrets.faceApiKey;
     private final DeviceRepository deviceRepository;
@@ -63,7 +63,7 @@ public class FaceService {
 
     public boolean AddFace(FaceUnlockDto faceUnlockDto){
         Device device = deviceRepository.getById(faceUnlockDto.getId());
-        if(!faceUnlockDto.getPin().equals(deviceRepository.getById(faceUnlockDto.getId()).getPin())){
+        if(!faceUnlockDto.getPin().equals(device.getPin())){
             return false;
         }
         /// add to face list
