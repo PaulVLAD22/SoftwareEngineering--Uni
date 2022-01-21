@@ -1,0 +1,35 @@
+--- 
+asyncapi: "2.1.0"
+channels: 
+  Status/{deviceId}: 
+    description: Channel that shows status of devices
+    parameters:
+      deviceId:
+        $ref: '#/components/parameters/deviceId'
+    publish: 
+      message: 
+        name: status
+        payload: 
+          description: "It can be either \"locked\" or \"unlocked\""
+          type: string
+      operationId: publishStatus
+      summary: "Shows the locking status for every iLock device"
+info: 
+  description: |
+      The iLock IoT app allows you to
+      manage your smart locks throughout your environment.
+  license: 
+    name: "Apache 2.0"
+    url: "https://www.apache.org/licenses/LICENSE-2.0"
+  title: iLock
+  version: "1.0.0"
+servers: 
+  mosquitto: 
+    protocol: mqtt
+    url: "localhost:1883"
+components:
+  parameters:
+    deviceId:
+      description: Device LOL
+      schema:
+        type: string
