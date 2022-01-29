@@ -62,6 +62,7 @@ public class FingerprintService {
                                 new FingerprintImageOptions()
                                         .dpi(500)));
                 double score = new FingerprintMatcher(probe).match(candidate);
+                System.out.println(score);
                 return score >= threshold;
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

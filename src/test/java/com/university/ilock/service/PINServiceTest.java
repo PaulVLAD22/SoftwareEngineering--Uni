@@ -14,6 +14,8 @@ import static org.mockito.Mockito.when;
 public class PINServiceTest {
     @Mock
     private DeviceRepository deviceRepository;
+    @Mock
+    private DeviceService deviceService;
     @InjectMocks
     private PINService pinService;
 
@@ -31,6 +33,7 @@ public class PINServiceTest {
         when(deviceRepository.getById(deviceId)).thenReturn(
                 Device.builder().pin(pin).build()
         );// when "method" is called then return "value"
+        when(deviceService.CheckInputAvailability(deviceId)).thenReturn(true);
         assertTrue(pinService.validatePin(deviceId, pin));
     }
 
@@ -40,6 +43,7 @@ public class PINServiceTest {
         when(deviceRepository.getById(deviceId)).thenReturn(
                 device
         );
+        when(deviceService.CheckInputAvailability(deviceId)).thenReturn(true);
         pinService.updatePINForDevice(deviceId,pin);
         assertTrue(pinService.validatePin(deviceId,pin));
     }
