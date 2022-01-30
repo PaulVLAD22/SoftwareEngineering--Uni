@@ -1,6 +1,7 @@
 package com.university.ilock.service;
 
 import com.university.ilock.Repository.DeviceRepository;
+import com.university.ilock.dtos.DeviceValidateDto;
 import com.university.ilock.dtos.NfcDto;
 import com.university.ilock.model.Device;
 import dev.samstevens.totp.code.CodeGenerator;
@@ -35,5 +36,13 @@ public class NfcService {
             deviceRepository.save(device);
         }
         return response;
+    }
+
+    public String GetNfcSecret(DeviceValidateDto deviceValidateDto){
+        Device device = deviceRepository.getById(deviceValidateDto.getDeviceId());
+        if(device.getPin() != deviceValidateDto.getPin()){
+            return null;
+        }
+        return device.getTotpSecret();
     }
 }

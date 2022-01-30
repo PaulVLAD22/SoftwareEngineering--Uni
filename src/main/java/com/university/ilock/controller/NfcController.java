@@ -1,5 +1,6 @@
 package com.university.ilock.controller;
 
+import com.university.ilock.dtos.DeviceValidateDto;
 import com.university.ilock.dtos.NfcDto;
 import com.university.ilock.service.NfcService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -22,6 +23,11 @@ public class NfcController {
     @PostMapping(value = "/validate")
     public boolean ValidateNfc(@RequestBody NfcDto nfcDto){
         return nfcService.ValidateNfc(nfcDto);
+    }
+
+    @PostMapping(value = "/get-secret")
+    public String GetNfcSecret(@RequestBody DeviceValidateDto deviceValidateDto){
+        return nfcService.GetNfcSecret(deviceValidateDto);
     }
 }
 
