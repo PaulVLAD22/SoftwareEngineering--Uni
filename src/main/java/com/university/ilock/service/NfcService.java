@@ -40,8 +40,8 @@ public class NfcService {
 
     public String GetNfcSecret(DeviceValidateDto deviceValidateDto){
         Device device = deviceRepository.getById(deviceValidateDto.getDeviceId());
-        if(device.getPin() != deviceValidateDto.getPin()){
-            return null;
+        if(!device.getPin().equals(deviceValidateDto.getPin())){
+            return "forbidden";
         }
         return device.getTotpSecret();
     }

@@ -24,12 +24,14 @@ public class DeviceService {
     private final EmailService emailService;
     private final SecretGenerator secretGenerator = new DefaultSecretGenerator();
 
-    public void RegisterDevice(DevicePostDto deviceDto){
-        Device device = new Device();
-        device.setPin(deviceDto.getPin());
-        device.setEmail(deviceDto.getEmail());
-        device.setTotpSecret(secretGenerator.generate());
-        deviceRepository.save(device);
+    public long RegisterDevice(DevicePostDto deviceDto){
+        Device device = Device.builder()
+                .pin(deviceDto.getPin())
+                .email(deviceDto.getEmail())
+                .totpSecret(secretGenerator.generate())
+                .build();
+//        deviceRepository.save(device).getId();
+        return deviceRepository.save(device).getId();
     }
 
     public void RegisterWrongInput(long id){
