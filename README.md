@@ -1,5 +1,9 @@
 # Manual de utilizare
 
+[**<b>Async Api Documentation</b>**](/asyncapi.yaml)
+
+[**<b>Document de analiză a cerințelor clientului</b>**](/analysis_document.md)
+
 ## Prerequisites:
 - Server MySQL ruland la localhost:3306/ilock
 - Server Mosquitto ruland la port 1883
